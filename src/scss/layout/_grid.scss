@@ -7,11 +7,5 @@
     background-color: black;
     z-index: 10;
     @include flex-center;
-    transition: all 0.5s ease;
-
-    .loader__center{
-        width: 100px;
-        height: 100px;
-        display: flex;
-    }
+    transition: all 1s ease 1.25s;
 }

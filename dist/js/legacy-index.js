@@ -103,7 +103,21 @@ exports.hideLoader = hideLoader;
 
 function hideLoader() {
   var loader = document.querySelector('.loader');
-  console.log(loader);
+  var bars = loader.querySelectorAll('.bar');
+  var item = {};
+  item.i = 1; // remove bars loading animation
+
+  bars.forEach(function (bar) {
+    console.log("bar" + item.i);
+    bar.classList.remove("bar" + item.i);
+    item.i++;
+  }); // add bars end animation
+
+  bars.forEach(function (bar) {
+    bar.style.animation = 'loading-end 3s ease';
+  }); // change bg color
+
+  loader.style.backgroundColor = 'white';
 }
 
 /***/ }),
