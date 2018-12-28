@@ -6,5 +6,75 @@ html {
   font-family: 'Crimson Text', serif;
   font-family: 'Lato', sans-serif;
   margin: 0;
-  padding: 0;
-  color: red; }
+  padding: 0; }
+
+.body {
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh; }
+
+.bar {
+  width: 30px;
+  height: 40px;
+  background-color: white;
+  margin: 5px;
+  box-shadow: 20px inset black; }
+
+.bar1 {
+  animation: animate1 1s ease-out infinite; }
+
+.bar2 {
+  animation: animate2 1s ease-out infinite; }
+
+.bar3 {
+  animation: animate3 1s ease-out infinite; }
+
+@keyframes animate1 {
+  0% {
+    transform: scaleY(1); }
+  10% {
+    transform: scaleY(1.7); }
+  45% {
+    transform: scaleY(1); }
+  100% {
+    transform: scaleY(1); } }
+
+@keyframes animate2 {
+  0% {
+    transform: scaleY(1); }
+  15% {
+    transform: scaleY(1); }
+  25% {
+    transform: scaleY(1.7); }
+  60% {
+    transform: scaleY(1); }
+  100% {
+    transform: scaleY(1); } }
+
+@keyframes animate3 {
+  0% {
+    transform: scaleY(1); }
+  30% {
+    transform: scaleY(1); }
+  40% {
+    transform: scaleY(1.7); }
+  85% {
+    transform: scaleY(1); }
+  100% {
+    transform: scaleY(1); } }
+
+.loader {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+  .loader .loader__center {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center; }

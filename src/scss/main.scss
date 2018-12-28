@@ -1,2 +1,11 @@
 @import url('https://fonts.googleapis.com/css?family=Crimson+Text|Lato');
+
+// helpers
+@import './helpers/mixins';
+
+// partials
 @import './partials/general';
+@import './partials/loader';
+
+// general layout
+@import './layout/grid';

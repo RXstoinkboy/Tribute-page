@@ -1,0 +1,75 @@
+.bar{
+    width: 30px;
+    height: 40px;
+    background-color: white;
+    margin: 5px;
+    box-shadow: 20px inset black;
+}
+
+@for $i from 1 through 3{
+    .bar#{$i}{
+        animation: animate#{$i} 1s ease-out infinite;
+    }
+}
+
+@keyframes animate1{
+    0%{
+        transform: scaleY(1);
+    }
+
+    10%{
+        transform: scaleY(1.7);
+    }
+
+    45%{
+        transform: scaleY(1);
+    }
+
+    100%{
+        transform: scaleY(1);
+    }
+}
+
+@keyframes animate2{
+    0%{
+        transform: scaleY(1);
+    }
+
+    15%{
+        transform: scaleY(1);
+    }
+
+    25%{
+        transform: scaleY(1.7);
+    }
+
+    60%{
+        transform: scaleY(1);
+    }
+
+    100%{
+        transform: scaleY(1);
+    }
+}
+
+@keyframes animate3{
+    0%{
+        transform: scaleY(1);
+    }
+
+    30%{
+        transform: scaleY(1);
+    }
+
+    40%{
+        transform: scaleY(1.7);
+    }
+
+    85%{
+        transform: scaleY(1);
+    }
+
+    100%{
+        transform: scaleY(1);
+    }
+}

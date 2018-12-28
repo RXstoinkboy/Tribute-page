@@ -1,0 +1,17 @@
+@import '../helpers/mixins';
+
+// loader placement
+.loader{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    z-index: 10;
+    @include flex-center;
+
+    .loader__center{
+        width: 100px;
+        height: 100px;
+        @include flex-center;
+    }
+}
