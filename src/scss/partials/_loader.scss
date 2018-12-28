@@ -3,15 +3,16 @@
     height: 40px;
     background-color: white;
     margin: 5px;
-    box-shadow: 20px inset black;
 }
 
+// loop through each abr in bars
 @for $i from 1 through 3{
     .bar#{$i}{
         animation: animate#{$i} 1s ease-out infinite;
     }
 }
 
+// animations
 @keyframes animate1{
     0%{
         transform: scaleY(1);

@@ -17,8 +17,7 @@ html {
   width: 30px;
   height: 40px;
   background-color: white;
-  margin: 5px;
-  box-shadow: 20px inset black; }
+  margin: 5px; }
 
 .bar1 {
   animation: animate1 1s ease-out infinite; }
@@ -71,10 +70,9 @@ html {
   z-index: 10;
   display: flex;
   justify-content: center;
-  align-items: center; }
+  align-items: center;
+  transition: all 0.5s ease; }
   .loader .loader__center {
     width: 100px;
     height: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center; }
+    display: flex; }

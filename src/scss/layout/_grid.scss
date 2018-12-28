@@ -3,15 +3,15 @@
 // loader placement
 .loader{
     position: absolute;
-    width: 100vw;
-    height: 100vh;
+    @include full-page;
     background-color: black;
     z-index: 10;
     @include flex-center;
+    transition: all 0.5s ease;
 
     .loader__center{
         width: 100px;
         height: 100px;
-        @include flex-center;
+        display: flex;
     }
 }

@@ -1,12 +1,12 @@
 module.exports = {
   entry: {
-    index: './src/js/index.mjs',
+    index: './src/js/index.js',
   },
   output: {
     path: `${__dirname}/dist/js`,
-    filename: 'legacy-[name].mjs',
+    filename: 'legacy-[name].js',
   },
-  watch: true,
+  watch: false,
   mode: 'development', // ta opcja zostanie pominięta jeżeli użyjemy npm run build
   devtool: 'source-map',
   module: {
