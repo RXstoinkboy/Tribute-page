@@ -162,7 +162,15 @@ Object.defineProperty(exports, "__esModule", {
 exports.movement = movement;
 
 function movement() {
-  console.log('ruszamy');
+  var slider = document.querySelector('.slider');
+  var image = slider.querySelector('.slider__image');
+  var caption = slider.querySelector('.slider__caption');
+
+  function move() {
+    console.log(image);
+  }
+
+  move(); //   setInterval(move, 2000);
 }
 
 /***/ })
