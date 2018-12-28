@@ -108,7 +108,6 @@ function hideLoader() {
   item.i = 1; // remove bars loading animation
 
   bars.forEach(function (bar) {
-    console.log("bar" + item.i);
     bar.classList.remove("bar" + item.i);
     item.i++;
   }); // add bars end animation
@@ -117,7 +116,12 @@ function hideLoader() {
     bar.style.animation = 'loading-end 3s ease';
   }); // change bg color
 
-  loader.style.backgroundColor = 'white';
+  loader.style.backgroundColor = 'black';
+  loader.addEventListener('transitionend', function () {
+    setTimeout(function () {
+      loader.style.display = 'none';
+    }, 500);
+  });
 }
 
 /***/ }),
@@ -134,8 +138,32 @@ function hideLoader() {
 
 var _hideLoader = __webpack_require__(/*! ./hideLoader.js */ "./src/js/hideLoader.js");
 
-// event listeners
+var _intro = __webpack_require__(/*! ./intro.js */ "./src/js/intro.js");
+
+(0, _intro.movement)(); // event listeners
+
 window.addEventListener('load', _hideLoader.hideLoader);
+
+/***/ }),
+
+/***/ "./src/js/intro.js":
+/*!*************************!*\
+  !*** ./src/js/intro.js ***!
+  \*************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.movement = movement;
+
+function movement() {
+  console.log('ruszamy');
+}
 
 /***/ })
 

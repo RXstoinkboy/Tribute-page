@@ -1,4 +1,33 @@
 @import url("https://fonts.googleapis.com/css?family=Crimson+Text|Lato");
+.body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden; }
+
+.loader {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all .5s ease 1.5s; }
+
+.slider {
+  width: 100vw;
+  height: 100vh;
+  background-color: black;
+  overflow: hidden; }
+
 html {
   box-sizing: border-box; }
 
@@ -16,7 +45,7 @@ html {
 .bar {
   width: 30px;
   height: 40px;
-  background-color: white;
+  background-color: black;
   margin: 5px; }
 
 .bar1 {
@@ -73,13 +102,20 @@ html {
   100% {
     transform: scaleY(1); } }
 
-.loader {
+.slider__image {
   position: absolute;
-  width: 100vw;
-  height: 100vh;
-  background-color: black;
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: all 1s ease 1.25s; }
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 110vh;
+  overflow: hidden; }
+
+.slider__caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(0, 0, 0, 0.199);
+  color: white;
+  font-size: 4em;
+  padding: .5em; }

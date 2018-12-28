@@ -3,9 +3,11 @@
 // helpers
 @import './helpers/mixins';
 
+// general layout
+@import './layout/grid';
+
 // partials
 @import './partials/general';
 @import './partials/loader';
+@import './partials/intro';
 
-// general layout
-@import './layout/grid';

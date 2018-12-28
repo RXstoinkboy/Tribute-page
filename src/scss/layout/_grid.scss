@@ -1,11 +1,26 @@
 @import '../helpers/mixins';
 
+.body{
+    position: absolute;
+    @include center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
 // loader placement
 .loader{
     position: absolute;
     @include full-page;
-    background-color: black;
+    background-color: white;
     z-index: 10;
     @include flex-center;
-    transition: all 1s ease 1.25s;
+    @include center;
+    transition: all .5s ease 1.5s;
+}
+
+.slider{
+    @include full-page;
+    background-color: black;
+    overflow: hidden;
 }

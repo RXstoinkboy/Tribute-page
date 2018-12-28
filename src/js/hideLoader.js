@@ -7,7 +7,6 @@ export function hideLoader() {
 
   // remove bars loading animation
   bars.forEach((bar) => {
-    console.log(`bar${item.i}`);
     bar.classList.remove(`bar${item.i}`);
     item.i++;
   });
@@ -18,5 +17,12 @@ export function hideLoader() {
   });
 
   // change bg color
-  loader.style.backgroundColor = 'white';
+  loader.style.backgroundColor = 'black';
+
+  loader.addEventListener('transitionend', () => {
+    setTimeout(() => {
+      loader.style.display = 'none';
+    }, 500);
+  });
+
 }
