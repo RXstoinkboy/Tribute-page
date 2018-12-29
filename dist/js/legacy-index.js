@@ -140,6 +140,8 @@ var _hideLoader = __webpack_require__(/*! ./hideLoader.js */ "./src/js/hideLoade
 
 var _intro = __webpack_require__(/*! ./intro.js */ "./src/js/intro.js");
 
+var _mainMenu = __webpack_require__(/*! ./mainMenu.js */ "./src/js/mainMenu.js");
+
 window.addEventListener('DOMContentLoaded', function () {
   // DOM elements
   var loader = document.querySelector('.loader'); // functions
@@ -165,20 +167,7 @@ window.addEventListener('DOMContentLoaded', function () {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.movement = movement;
 exports.runSlider = runSlider;
-
-function movement() {
-  var slider = document.querySelector('.slider');
-  var image = slider.querySelector('.slider__image');
-  var caption = slider.querySelector('.slider__caption');
-
-  function move() {
-    console.log(image);
-  }
-
-  move(); //   setInterval(move, 2000);
-}
 
 function runSlider() {
   // select image element in DOM
@@ -187,14 +176,22 @@ function runSlider() {
   var caption = document.querySelector('.slider__caption');
   var courtain = document.querySelector('.slider__courtain');
   var imagesCollection = ['/dist/images/roger-taylor.jpg', '/dist/images/brian-may.jpg', '/dist/images/john-deacon.jpg', '/dist/images/freddie-mercury.jpg', '/dist/images/queen-logo-white.jpg'];
-  var textCollection = ['Roger Taylor', 'Brian May', 'John Deacon', 'Freddie Mercury']; // courtain transition
+  var textCollection = ['Roger Taylor', 'Brian May', 'John Deacon', 'Freddie Mercury']; // random number between 1 and 5
+
+  var random = function random(max, min) {
+    return Math.floor(Math.random() * (max - min) + min);
+  }; // courtain transition
+
 
   courtain.style.backgroundColor = 'transparent'; // iteration counter
 
   var num = {};
   num.i = 0; // initial setup
 
-  image.src = "." + imagesCollection[num.i];
+  image.src = "." + imagesCollection[num.i]; // random image and text flow
+
+  image.style.transform = "translate(" + (-50 + random(2, -2)) + "%, " + (-50 + random(2, -2)) + "%)";
+  caption.style.transform = "translate(" + (-50 + random(4, -4)) + "%, " + (-50 + random(4, -4)) + "%)";
   setTimeout(function () {
     courtain.style.backgroundColor = 'white';
   }, 4000); // change images slideshow
@@ -208,9 +205,13 @@ function runSlider() {
     // image.style.backgroundImage = `url("${imagesCollection[num.i]}")`;
 
 
-    image.src = "." + imagesCollection[num.i]; // change text
+    image.src = "." + imagesCollection[num.i]; // random image flow
 
-    caption.innerText = textCollection[num.i];
+    image.style.transform = "translate(" + (-50 + random(2, -2)) + "%, " + (-50 + random(2, -2)) + "%)"; // change text
+
+    caption.innerText = textCollection[num.i]; // random text flow
+
+    caption.style.transform = "translate(" + (-50 + random(4, -4)) + "%, " + (-50 + random(4, -4)) + "%)";
 
     if (num.i == 4) {
       caption.innerText = '';
@@ -226,13 +227,39 @@ function runSlider() {
     }
 
     var delay = setTimeout(function () {
-      courtain.style.backgroundColor = 'white';
-    }, 4000); // 4
+      courtain.style.backgroundColor = 'white'; // set slider display to 'none' in the end to reveal main-menu
 
-    console.log(num.i);
+      if (num.i == 4) {
+        slider.addEventListener('transitionend', function () {
+          slider.style.display = 'none';
+        });
+      }
+    }, 4000);
   }
 
   var slideThrough = setInterval(changeImages, 5000);
+}
+
+/***/ }),
+
+/***/ "./src/js/mainMenu.js":
+/*!****************************!*\
+  !*** ./src/js/mainMenu.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.displayMenu = displayMenu;
+
+function displayMenu() {
+  var slider = document.querySelector('.slider');
+  slider.style.display = 'none';
 }
 
 /***/ })

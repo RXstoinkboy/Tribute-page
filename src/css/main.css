@@ -116,7 +116,7 @@ html {
   transform: translate(-50%, -50%);
   height: 110vh;
   overflow: hidden;
-  transition: all 1.5s ease-in; }
+  transition: all 5s ease-in; }
 
 .slider__caption {
   position: absolute;
@@ -127,4 +127,9 @@ html {
   color: white;
   font-size: 4em;
   padding: .5em;
-  content: 'Roger Taylor'; }
+  transition: all 5s ease; }
+
+.main-menu {
+  width: 100vw;
+  height: 100vh;
+  background-color: red; }

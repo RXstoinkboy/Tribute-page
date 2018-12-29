@@ -1,5 +1,6 @@
 import { hideLoader } from './hideLoader.js';
-import { movement, runSlider } from './intro.js';
+import { runSlider } from './intro.js';
+import { displayMenu } from './mainMenu.js';
 
 window.addEventListener('DOMContentLoaded', () => {
   // DOM elements

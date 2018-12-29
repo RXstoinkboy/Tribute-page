@@ -1,17 +1,3 @@
-export function movement() {
-  const slider = document.querySelector('.slider');
-  const image = slider.querySelector('.slider__image');
-  const caption = slider.querySelector('.slider__caption');
-
-  function move() {
-    console.log(image);
-  }
-
-  move();
-
-//   setInterval(move, 2000);
-}
-
 export function runSlider() {
   // select image element in DOM
   const slider = document.querySelector('.slider');
@@ -34,6 +20,9 @@ export function runSlider() {
     'Freddie Mercury',
   ];
 
+  // random number between 1 and 5
+  const random = (max, min) => Math.floor(Math.random() * (max - min) + min);
+
   // courtain transition
   courtain.style.backgroundColor = 'transparent';
 
@@ -43,6 +32,10 @@ export function runSlider() {
 
   // initial setup
   image.src = `.${imagesCollection[num.i]}`;
+
+  // random image and text flow
+  image.style.transform = `translate(${-50 + random(2, -2)}%, ${-50 + random(2, -2)}%)`;
+  caption.style.transform = `translate(${-50 + random(4, -4)}%, ${-50 + random(4, -4)}%)`;
   setTimeout(() => {
     courtain.style.backgroundColor = 'white';
   }, 4000);
@@ -57,8 +50,14 @@ export function runSlider() {
     // image.style.backgroundImage = `url("${imagesCollection[num.i]}")`;
 
     image.src = `.${imagesCollection[num.i]}`;
+
+    // random image flow
+    image.style.transform = `translate(${-50 + random(2, -2)}%, ${-50 + random(2, -2)}%)`;
     // change text
     caption.innerText = textCollection[num.i];
+
+    // random text flow
+    caption.style.transform = `translate(${-50 + random(4, -4)}%, ${-50 + random(4, -4)}%)`;
 
     if (num.i == 4) {
       caption.innerText = '';
@@ -75,13 +74,14 @@ export function runSlider() {
 
     const delay = setTimeout(() => {
       courtain.style.backgroundColor = 'white';
-    }, 4000); // 4
-
-    console.log(num.i);
+      // set slider display to 'none' in the end to reveal main-menu
+      if (num.i == 4) {
+        slider.addEventListener('transitionend', () => {
+          slider.style.display = 'none';
+        });
+      }
+    }, 4000);
   }
 
   const slideThrough = setInterval(changeImages, 5000);
-
-
-
 }

@@ -1,9 +1,9 @@
-# RXstoinkboy portfolio
+# Tribute-apge example
 This is sample tribute page build for FCC RWD certification.
 
-// on progress
+// in progress
 
-[watch preview](https://rxstoinkboy.github.io/tribute-page/)
+[watch preview](https://rxstoinkboy.github.io/Tribute-page/)
 
 ## Usage
 These are instructions needed for you in order to download this repo and run it on your local machine.
