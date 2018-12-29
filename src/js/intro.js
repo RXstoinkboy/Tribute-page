@@ -33,23 +33,31 @@ export function runSlider() {
     'Freddie Mercury',
   ];
 
+  // courtain transition
+  courtain.style.backgroundColor = 'transparent';
+
   // iteration counter
   const num = {};
   num.i = 0;
 
-  // courtain transition
-  courtain.style.backgroundColor = 'transparent';
+  // initial animations
+  image.src = `.${imagesCollection[num.i]}`;
+  setTimeout(() => {
+    courtain.style.backgroundColor = 'white';
+  }, 4000);
 
   // change image
   setInterval(() => {
+    courtain.style.backgroundColor = 'transparent';
     num.i < imagesCollection.length - 1 ? num.i++ : num.i = 0;
     // change background image
-    image.style.backgroundImage = `url("${imagesCollection[num.i]}")`;
+    // image.style.backgroundImage = `url("${imagesCollection[num.i]}")`;
+    image.src = `.${imagesCollection[num.i]}`;
     // change text
     caption.innerText = textCollection[num.i];
-    setInterval(() => {
-      image.style.top = `1px${+num.i}`;
-      console.log(`${num.i}`);
-    }, 100);
+
+    setTimeout(() => {
+      courtain.style.backgroundColor = 'white';
+    }, 4000);
   }, 5000);
 }

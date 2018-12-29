@@ -6,19 +6,31 @@
     width: 110vw; // tmp
     overflow: hidden;
     transition: all 1s ease;
-    background-color: black;
+    background-color: white;
 }
+
+// .slider__image{
+//     position: absolute;
+//     @include center;
+//     height: 110vh; 
+//     width: 110vw; // tmp
+//     overflow: hidden;
+//     transition: all 1.5s ease-in;
+//     background-image: url('/dist/images/roger-taylor.jpg');
+//     background-position: center;
+//     background-size: cover;
+// }
 
 .slider__image{
     position: absolute;
     @include center;
     height: 110vh; 
-    width: 110vw; // tmp
+    // width: 110vw; // tmp
     overflow: hidden;
     transition: all 1.5s ease-in;
-    background-image: url('/dist/images/roger-taylor.jpg');
-    background-position: center;
-    background-size: cover;
+    // background-image: url('/dist/images/roger-taylor.jpg');
+    // background-position: center;
+    // background-size: cover;
 }
 
 .slider__caption{

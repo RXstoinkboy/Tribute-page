@@ -107,7 +107,7 @@ html {
   width: 110vw;
   overflow: hidden;
   transition: all 1s ease;
-  background-color: black; }
+  background-color: white; }
 
 .slider__image {
   position: absolute;
@@ -115,12 +115,8 @@ html {
   left: 50%;
   transform: translate(-50%, -50%);
   height: 110vh;
-  width: 110vw;
   overflow: hidden;
-  transition: all 1.5s ease-in;
-  background-image: url("/dist/images/roger-taylor.jpg");
-  background-position: center;
-  background-size: cover; }
+  transition: all 1.5s ease-in; }
 
 .slider__caption {
   position: absolute;

@@ -12,4 +12,3 @@ window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('load', hideLoader);
   loader.addEventListener('transitionend', runSlider);
 });
-

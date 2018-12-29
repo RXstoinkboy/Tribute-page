@@ -187,23 +187,29 @@ function runSlider() {
   var caption = document.querySelector('.slider__caption');
   var courtain = document.querySelector('.slider__courtain');
   var imagesCollection = ['/dist/images/roger-taylor.jpg', '/dist/images/brian-may.jpg', '/dist/images/john-deacon.jpg', '/dist/images/freddie-mercury.jpg'];
-  var textCollection = ['Roger Taylor', 'Brian May', 'John Deacon', 'Freddie Mercury']; // iteration counter
+  var textCollection = ['Roger Taylor', 'Brian May', 'John Deacon', 'Freddie Mercury']; // courtain transition
+
+  courtain.style.backgroundColor = 'transparent'; // iteration counter
 
   var num = {};
-  num.i = 0; // courtain transition
+  num.i = 0; // initial animations
 
-  courtain.style.backgroundColor = 'transparent'; // change image
+  image.src = "." + imagesCollection[num.i];
+  setTimeout(function () {
+    courtain.style.backgroundColor = 'white';
+  }, 4000); // change image
 
   setInterval(function () {
+    courtain.style.backgroundColor = 'transparent';
     num.i < imagesCollection.length - 1 ? num.i++ : num.i = 0; // change background image
+    // image.style.backgroundImage = `url("${imagesCollection[num.i]}")`;
 
-    image.style.backgroundImage = "url(\"" + imagesCollection[num.i] + "\")"; // change text
+    image.src = "." + imagesCollection[num.i]; // change text
 
     caption.innerText = textCollection[num.i];
-    setInterval(function () {
-      image.style.top = "1px" + +num.i;
-      console.log("" + num.i);
-    }, 100);
+    setTimeout(function () {
+      courtain.style.backgroundColor = 'white';
+    }, 4000);
   }, 5000);
 }
 
