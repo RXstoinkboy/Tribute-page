@@ -140,9 +140,15 @@ var _hideLoader = __webpack_require__(/*! ./hideLoader.js */ "./src/js/hideLoade
 
 var _intro = __webpack_require__(/*! ./intro.js */ "./src/js/intro.js");
 
-(0, _intro.movement)(); // event listeners
+window.addEventListener('DOMContentLoaded', function () {
+  // DOM elements
+  var loader = document.querySelector('.loader'); // functions
+  //   movement();
+  // event listeners
 
-window.addEventListener('load', _hideLoader.hideLoader);
+  window.addEventListener('load', _hideLoader.hideLoader);
+  loader.addEventListener('transitionend', _intro.runSlider);
+});
 
 /***/ }),
 
@@ -160,6 +166,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.movement = movement;
+exports.runSlider = runSlider;
 
 function movement() {
   var slider = document.querySelector('.slider');
@@ -171,6 +178,20 @@ function movement() {
   }
 
   move(); //   setInterval(move, 2000);
+}
+
+function runSlider() {
+  console.log('slajdy'); // select image element in DOM
+
+  var image = document.querySelector('.slider__image');
+  var imagesCollection = ['./dist/images/roger-taylor.jpg', './dist/images/brian-may.jpg', './dist/images/john-deacon.jpg', './dist/images/freddie-mercury.jpg']; // iteration counter
+
+  var num = {};
+  num.i = 0;
+  setInterval(function () {
+    num.i < imagesCollection.length - 1 ? num.i++ : num.i = 0;
+    image.src = imagesCollection[num.i];
+  }, 4000);
 }
 
 /***/ })

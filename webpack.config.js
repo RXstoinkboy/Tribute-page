@@ -7,7 +7,7 @@ module.exports = {
     filename: 'legacy-[name].js',
   },
   watch: false,
-  mode: 'development', // ta opcja zostanie pominięta jeżeli użyjemy npm run build
+  mode: 'development',
   devtool: 'source-map',
   module: {
     rules: [{

@@ -1,7 +1,15 @@
 import { hideLoader } from './hideLoader.js';
-import { movement } from './intro.js';
+import { movement, runSlider } from './intro.js';
 
-movement();
+window.addEventListener('DOMContentLoaded', () => {
+  // DOM elements
+  const loader = document.querySelector('.loader');
+  // functions
 
-// event listeners
-window.addEventListener('load', hideLoader);
+  //   movement();
+
+  // event listeners
+  window.addEventListener('load', hideLoader);
+  loader.addEventListener('transitionend', runSlider);
+});
+
