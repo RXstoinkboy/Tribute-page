@@ -97,13 +97,30 @@ html {
   100% {
     transform: scaleY(1); } }
 
+.slider__courtain {
+  position: absolute;
+  z-index: 5;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 110vh;
+  width: 110vw;
+  overflow: hidden;
+  transition: all 1s ease;
+  background-color: black; }
+
 .slider__image {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   height: 110vh;
-  overflow: hidden; }
+  width: 110vw;
+  overflow: hidden;
+  transition: all 1.5s ease-in;
+  background-image: url("/dist/images/roger-taylor.jpg");
+  background-position: center;
+  background-size: cover; }
 
 .slider__caption {
   position: absolute;
@@ -113,4 +130,5 @@ html {
   background-color: rgba(0, 0, 0, 0.199);
   color: white;
   font-size: 4em;
-  padding: .5em; }
+  padding: .5em;
+  content: 'Roger Taylor'; }

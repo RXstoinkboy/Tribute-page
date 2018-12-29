@@ -184,14 +184,27 @@ function runSlider() {
   console.log('slajdy'); // select image element in DOM
 
   var image = document.querySelector('.slider__image');
-  var imagesCollection = ['./dist/images/roger-taylor.jpg', './dist/images/brian-may.jpg', './dist/images/john-deacon.jpg', './dist/images/freddie-mercury.jpg']; // iteration counter
+  var caption = document.querySelector('.slider__caption');
+  var courtain = document.querySelector('.slider__courtain');
+  var imagesCollection = ['/dist/images/roger-taylor.jpg', '/dist/images/brian-may.jpg', '/dist/images/john-deacon.jpg', '/dist/images/freddie-mercury.jpg'];
+  var textCollection = ['Roger Taylor', 'Brian May', 'John Deacon', 'Freddie Mercury']; // iteration counter
 
   var num = {};
-  num.i = 0;
+  num.i = 0; // courtain transition
+
+  courtain.style.backgroundColor = 'transparent'; // change image
+
   setInterval(function () {
-    num.i < imagesCollection.length - 1 ? num.i++ : num.i = 0;
-    image.src = imagesCollection[num.i];
-  }, 4000);
+    num.i < imagesCollection.length - 1 ? num.i++ : num.i = 0; // change background image
+
+    image.style.backgroundImage = "url(\"" + imagesCollection[num.i] + "\")"; // change text
+
+    caption.innerText = textCollection[num.i];
+    setInterval(function () {
+      image.style.top = "1px" + +num.i;
+      console.log("" + num.i);
+    }, 100);
+  }, 5000);
 }
 
 /***/ })
