@@ -6,11 +6,11 @@ function preload() {
   }
 }
 preload(
-  'dist/images/brian-may.jpg',
-  'dist/images/freddie-mercury.jpg',
-  'dist/images/john-deacon.jpg',
-  'dist/images/roger-taylor.jpg',
-  'dist/images/bohemian_rhapsody.jpg',
-  'dist/images/queen-logo-black.jpg',
-  'dist/images/queen-logo-white.jpg',
+  './dist/images/brian-may.jpg',
+  './dist/images/freddie-mercury.jpg',
+  './dist/images/john-deacon.jpg',
+  './dist/images/roger-taylor.jpg',
+  './dist/images/bohemian_rhapsody.jpg',
+  './dist/images/queen-logo-black.jpg',
+  './dist/images/queen-logo-white.jpg',
 );

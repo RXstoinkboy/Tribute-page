@@ -13,8 +13,8 @@ export function movement() {
 }
 
 export function runSlider() {
-  console.log('slajdy');
   // select image element in DOM
+  const slider = document.querySelector('.slider');
   const image = document.querySelector('.slider__image');
   const caption = document.querySelector('.slider__caption');
   const courtain = document.querySelector('.slider__courtain');
@@ -24,6 +24,7 @@ export function runSlider() {
     '/dist/images/brian-may.jpg',
     '/dist/images/john-deacon.jpg',
     '/dist/images/freddie-mercury.jpg',
+    '/dist/images/queen-logo-white.jpg',
   ];
 
   const textCollection = [
@@ -40,24 +41,47 @@ export function runSlider() {
   const num = {};
   num.i = 0;
 
-  // initial animations
+  // initial setup
   image.src = `.${imagesCollection[num.i]}`;
   setTimeout(() => {
     courtain.style.backgroundColor = 'white';
   }, 4000);
 
-  // change image
-  setInterval(() => {
+  // change images slideshow
+  function changeImages() {
     courtain.style.backgroundColor = 'transparent';
-    num.i < imagesCollection.length - 1 ? num.i++ : num.i = 0;
+    if (num.i < imagesCollection.length - 1) {
+      num.i++;
+    }
     // change background image
     // image.style.backgroundImage = `url("${imagesCollection[num.i]}")`;
+
     image.src = `.${imagesCollection[num.i]}`;
     // change text
     caption.innerText = textCollection[num.i];
 
-    setTimeout(() => {
+    if (num.i == 4) {
+      caption.innerText = '';
+      caption.style.padding = '0';
+      slider.style.width = '100vw';
+      slider.style.backgroundColor = 'white';
+      image.style.transition = 'all 0s linear';
+      image.style.height = '40vh';
+    }
+
+    if (num.i >= (imagesCollection.length - 1)) {
+      clearInterval(slideThrough);
+    }
+
+    const delay = setTimeout(() => {
       courtain.style.backgroundColor = 'white';
-    }, 4000);
-  }, 5000);
+    }, 4000); // 4
+
+    console.log(num.i);
+  }
+
+  const slideThrough = setInterval(changeImages, 5000);
+
+
+
 }

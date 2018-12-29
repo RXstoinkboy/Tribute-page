@@ -181,36 +181,58 @@ function movement() {
 }
 
 function runSlider() {
-  console.log('slajdy'); // select image element in DOM
-
+  // select image element in DOM
+  var slider = document.querySelector('.slider');
   var image = document.querySelector('.slider__image');
   var caption = document.querySelector('.slider__caption');
   var courtain = document.querySelector('.slider__courtain');
-  var imagesCollection = ['/dist/images/roger-taylor.jpg', '/dist/images/brian-may.jpg', '/dist/images/john-deacon.jpg', '/dist/images/freddie-mercury.jpg'];
+  var imagesCollection = ['/dist/images/roger-taylor.jpg', '/dist/images/brian-may.jpg', '/dist/images/john-deacon.jpg', '/dist/images/freddie-mercury.jpg', '/dist/images/queen-logo-white.jpg'];
   var textCollection = ['Roger Taylor', 'Brian May', 'John Deacon', 'Freddie Mercury']; // courtain transition
 
   courtain.style.backgroundColor = 'transparent'; // iteration counter
 
   var num = {};
-  num.i = 0; // initial animations
+  num.i = 0; // initial setup
 
   image.src = "." + imagesCollection[num.i];
   setTimeout(function () {
     courtain.style.backgroundColor = 'white';
-  }, 4000); // change image
+  }, 4000); // change images slideshow
 
-  setInterval(function () {
+  function changeImages() {
     courtain.style.backgroundColor = 'transparent';
-    num.i < imagesCollection.length - 1 ? num.i++ : num.i = 0; // change background image
+
+    if (num.i < imagesCollection.length - 1) {
+      num.i++;
+    } // change background image
     // image.style.backgroundImage = `url("${imagesCollection[num.i]}")`;
+
 
     image.src = "." + imagesCollection[num.i]; // change text
 
     caption.innerText = textCollection[num.i];
-    setTimeout(function () {
+
+    if (num.i == 4) {
+      caption.innerText = '';
+      caption.style.padding = '0';
+      slider.style.width = '100vw';
+      slider.style.backgroundColor = 'white';
+      image.style.transition = 'all 0s linear';
+      image.style.height = '40vh';
+    }
+
+    if (num.i >= imagesCollection.length - 1) {
+      clearInterval(slideThrough);
+    }
+
+    var delay = setTimeout(function () {
       courtain.style.backgroundColor = 'white';
-    }, 4000);
-  }, 5000);
+    }, 4000); // 4
+
+    console.log(num.i);
+  }
+
+  var slideThrough = setInterval(changeImages, 5000);
 }
 
 /***/ })
