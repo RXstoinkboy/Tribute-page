@@ -1,5 +1,6 @@
 # Tribute-apge example
 This is sample tribute page build for FCC RWD certification.
+It could probably be done easier with less JS and more mediaqueries, but I used JS to get more practice.
 
 // in progress
 

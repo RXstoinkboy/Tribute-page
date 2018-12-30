@@ -35,7 +35,6 @@ export function runSlider() {
 
   // random image and text flow
   image.style.transform = `translate(${-50 + random(2, -2)}%, ${-50 + random(2, -2)}%)`;
-  caption.style.transform = `translate(${-50 + random(4, -4)}%, ${-50 + random(4, -4)}%)`;
   setTimeout(() => {
     courtain.style.backgroundColor = 'white';
   }, 4000);
@@ -46,8 +45,6 @@ export function runSlider() {
     if (num.i < imagesCollection.length - 1) {
       num.i++;
     }
-    // change background image
-    // image.style.backgroundImage = `url("${imagesCollection[num.i]}")`;
 
     image.src = `.${imagesCollection[num.i]}`;
 
@@ -56,9 +53,6 @@ export function runSlider() {
     // change text
     caption.innerText = textCollection[num.i];
 
-    // random text flow
-    caption.style.transform = `translate(${-50 + random(4, -4)}%, ${-50 + random(4, -4)}%)`;
-
     if (num.i == 4) {
       caption.innerText = '';
       caption.style.padding = '0';
@@ -66,6 +60,7 @@ export function runSlider() {
       slider.style.backgroundColor = 'white';
       image.style.transition = 'all 0s linear';
       image.style.height = '40vh';
+      image.style.width = 'auto';
     }
 
     if (num.i >= (imagesCollection.length - 1)) {

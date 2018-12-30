@@ -144,12 +144,14 @@ var _mainMenu = __webpack_require__(/*! ./mainMenu.js */ "./src/js/mainMenu.js")
 
 window.addEventListener('DOMContentLoaded', function () {
   // DOM elements
-  var loader = document.querySelector('.loader'); // functions
+  var loader = document.querySelector('.loader');
+  var sliderImage = document.querySelector('.slider__image'); // functions
   //   movement();
   // event listeners
 
   window.addEventListener('load', _hideLoader.hideLoader);
   loader.addEventListener('transitionend', _intro.runSlider);
+  sliderImage.addEventListener('transitionend', _mainMenu.displayMenu);
 });
 
 /***/ }),
@@ -191,7 +193,6 @@ function runSlider() {
   image.src = "." + imagesCollection[num.i]; // random image and text flow
 
   image.style.transform = "translate(" + (-50 + random(2, -2)) + "%, " + (-50 + random(2, -2)) + "%)";
-  caption.style.transform = "translate(" + (-50 + random(4, -4)) + "%, " + (-50 + random(4, -4)) + "%)";
   setTimeout(function () {
     courtain.style.backgroundColor = 'white';
   }, 4000); // change images slideshow
@@ -201,17 +202,13 @@ function runSlider() {
 
     if (num.i < imagesCollection.length - 1) {
       num.i++;
-    } // change background image
-    // image.style.backgroundImage = `url("${imagesCollection[num.i]}")`;
-
+    }
 
     image.src = "." + imagesCollection[num.i]; // random image flow
 
     image.style.transform = "translate(" + (-50 + random(2, -2)) + "%, " + (-50 + random(2, -2)) + "%)"; // change text
 
-    caption.innerText = textCollection[num.i]; // random text flow
-
-    caption.style.transform = "translate(" + (-50 + random(4, -4)) + "%, " + (-50 + random(4, -4)) + "%)";
+    caption.innerText = textCollection[num.i];
 
     if (num.i == 4) {
       caption.innerText = '';
@@ -220,6 +217,7 @@ function runSlider() {
       slider.style.backgroundColor = 'white';
       image.style.transition = 'all 0s linear';
       image.style.height = '40vh';
+      image.style.width = 'auto';
     }
 
     if (num.i >= imagesCollection.length - 1) {
@@ -259,7 +257,6 @@ exports.displayMenu = displayMenu;
 
 function displayMenu() {
   var slider = document.querySelector('.slider');
-  slider.style.display = 'none';
 }
 
 /***/ })

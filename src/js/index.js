@@ -5,6 +5,7 @@ import { displayMenu } from './mainMenu.js';
 window.addEventListener('DOMContentLoaded', () => {
   // DOM elements
   const loader = document.querySelector('.loader');
+  const sliderImage = document.querySelector('.slider__image');
   // functions
 
   //   movement();
@@ -12,4 +13,5 @@ window.addEventListener('DOMContentLoaded', () => {
   // event listeners
   window.addEventListener('load', hideLoader);
   loader.addEventListener('transitionend', runSlider);
+  sliderImage.addEventListener('transitionend', displayMenu);
 });
