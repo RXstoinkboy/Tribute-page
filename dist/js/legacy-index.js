@@ -207,18 +207,21 @@ function runSlider() {
   var textCollection = ['Roger Taylor', 'Brian May', 'John Deacon', 'Freddie Mercury']; // random number between 1 and 5
 
   var random = function random(max, min) {
-    return Math.floor(Math.random() * (max - min) + min);
+    return Math.random() * (max - min) + min;
   }; // courtain transition
 
 
   courtain.style.backgroundColor = 'transparent'; // iteration counter
 
   var num = {};
-  num.i = 0; // initial setup
+  num.i = 0; // // initial setup
 
-  image.src = "." + imagesCollection[num.i]; // random image flow
+  image.src = "." + imagesCollection[num.i]; // random image flow / only setting interval helpped me to make a motion flow
 
-  image.style.transform = "translate(" + (-50 + random(2, -2)) + "%, " + (-50 + random(2, -2)) + "%)";
+  setTimeout(function () {
+    image.style.transform = "translate(" + (-50 + random(2, -2)) + "%, " + (-50 + random(2, -2)) + "%)";
+  }, 500); // courtain after 4seconds
+
   setTimeout(function () {
     courtain.style.backgroundColor = 'white';
   }, 4000); // change images slideshow

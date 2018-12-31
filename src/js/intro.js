@@ -22,7 +22,7 @@ export function runSlider() {
   ];
 
   // random number between 1 and 5
-  const random = (max, min) => Math.floor(Math.random() * (max - min) + min);
+  const random = (max, min) => Math.random() * (max - min) + min;
 
   // courtain transition
   courtain.style.backgroundColor = 'transparent';
@@ -31,11 +31,13 @@ export function runSlider() {
   const num = {};
   num.i = 0;
 
-  // initial setup
+  // // initial setup
   image.src = `.${imagesCollection[num.i]}`;
 
-  // random image flow
-  image.style.transform = `translate(${-50 + random(2, -2)}%, ${-50 + random(2, -2)}%)`;
+  // random image flow / only setting interval helpped me to make a motion flow
+  setTimeout(() => { image.style.transform = `translate(${-50 + random(2, -2)}%, ${-50 + random(2, -2)}%)`; }, 500);
+
+  // courtain after 4seconds
   setTimeout(() => {
     courtain.style.backgroundColor = 'white';
   }, 4000);
@@ -43,6 +45,7 @@ export function runSlider() {
   // change images slideshow
   function changeImages() {
     courtain.style.backgroundColor = 'transparent';
+
     if (num.i < imagesCollection.length - 1) {
       num.i++;
     }
