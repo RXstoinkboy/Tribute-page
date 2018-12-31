@@ -166,18 +166,18 @@ var _mainMenu = __webpack_require__(/*! ./mainMenu.js */ "./src/js/mainMenu.js")
 
 var _hideInfo = __webpack_require__(/*! ./hideInfo.js */ "./src/js/hideInfo.js");
 
-window.addEventListener('DOMContentLoaded', function () {
+// window.addEventListener('DOMContentLoaded', () => {
+(function () {
   // DOM elements
   var loader = document.querySelector('.loader');
   var infoButton = document.querySelector('.main-menu__info-btn');
-  var close = document.querySelector('.button'); // functions
-  // event listeners
+  var close = document.querySelector('.button'); // event listeners
 
   window.addEventListener('load', _hideLoader.hideLoader);
   loader.addEventListener('transitionend', _intro.runSlider);
   infoButton.addEventListener('click', _mainMenu.displayMenu);
   close.addEventListener('click', _hideInfo.hideInfo);
-});
+})(); // });
 
 /***/ }),
 
@@ -216,7 +216,7 @@ function runSlider() {
   var num = {};
   num.i = 0; // initial setup
 
-  image.src = "." + imagesCollection[num.i]; // random image and text flow
+  image.src = "." + imagesCollection[num.i]; // random image flow
 
   image.style.transform = "translate(" + (-50 + random(2, -2)) + "%, " + (-50 + random(2, -2)) + "%)";
   setTimeout(function () {
@@ -232,7 +232,7 @@ function runSlider() {
 
     image.src = "." + imagesCollection[num.i]; // random image flow
 
-    image.style.transform = "translate(" + (-50 + random(2, -2)) + "%, " + (-50 + random(2, -2)) + "%)"; // change text
+    image.style.transform = "translate(" + (-50 + random(1, -1)) + "%, " + (-50 + random(1, -1)) + "%)"; // change text
 
     caption.innerText = textCollection[num.i];
 
