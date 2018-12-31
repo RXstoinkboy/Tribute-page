@@ -2,9 +2,130 @@
     @include full-page;
     @include flex-center;
     background-color: black;
+    display: none;
 }
 
 .main-menu__image{
     max-width: 100%;
     max-height: 100%;
+}
+
+.main-menu__title, .main-menu__description{
+    color: white;
+    font-size: 4em;
+}
+
+.main-menu__wrapper{
+    position: absolute;
+    background-color: $transparent-bg;
+    @include center;
+    @include flex-center;
+    flex-flow: column wrap;
+    min-width: 100px;
+    min-height: 100px;
+    padding: 20px;
+}
+
+.main-menu__title{
+//     top: 45%;
+    font-weight: 700;
+}
+
+.main-menu__description{
+//     top: 55%;
+    font-size: 2em;
+    font-family: Lato;
+}
+
+.main-menu__info-btn{
+    border: none;
+    height: 60px;
+    width: 60px;
+    background-color: white;
+    box-shadow: 0 4px 5px black, 0 0 10px rgb(92, 92, 92) inset;
+    border-radius: 50%;
+    @include flex-center;
+    font-size: 1.2em;
+    margin-top: 20px;
+    transition: all .5s ease;
+
+    &:hover{
+        box-shadow: 0 2px 3px black, 0 0 10px rgb(255, 255, 255) inset;
+        color: gray;
+        cursor: pointer;
+    }
+}
+
+.main-menu__info-cnt{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    background-color: white;
+    box-shadow: 0 4px 5px black, 0 0 10px rgb(92, 92, 92) inset;
+    overflow: auto;
+    padding: 100px 20px;
+    font-size: 1.5em;
+    display: flex;
+    flex-flow: column nowrap;
+    transform: translate(-50%, -50%) scale(0);
+
+    .button{
+        @extend .main-menu__info-btn;
+        position: fixed;
+        font-size: 1em;
+        left: 50%;
+        top: 5px;
+        transform: translateX(-50%);
+    }
+
+    .info-cnt__info{
+        text-align: justify;
+    }
+
+    .info-cnt__link{
+        font-family: Lato;
+        text-align: center;
+    }
+
+    .info-cnt__info>p{
+        margin-bottom: 20px;
+    }
+}
+
+@keyframes expand{
+    0%{
+        transform: translate(-50%, -50%) scaleX(0);
+        transform: translate(-50%, -50%) scaleY(0);
+        color: white;
+    }
+    30%{
+        transform: translate(-50%, -50%) scaleX(1);
+        transform: translate(-50%, -50%) scaleY(.05);
+        color: white;
+    }
+
+    70%{
+        transform: translate(-50%, -50%) scaleX(1);
+        transform: translate(-50%, -50%) scaleY(1);
+        color: white;
+    }
+    100%{
+        transform: translate(-50%, -50%) scaleX(1);
+        transform: translate(-50%, -50%) scaleY(1);
+        color: black;
+    }
+}
+
+@media all and (orientation: portrait) and (max-width: 450px){
+    .main-menu__info-cnt{
+        width: 90vw;
+    }
+}
+
+@media all and (orientation: landscape) and (max-height: 450px){
+    .main-menu__info-cnt{
+        max-height: 90%;
+    }
 }

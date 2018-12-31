@@ -86,6 +86,28 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/js/hideInfo.js":
+/*!****************************!*\
+  !*** ./src/js/hideInfo.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.hideInfo = hideInfo;
+
+function hideInfo() {
+  var info = document.querySelector('.main-menu__info-cnt');
+  info.style.display = 'none';
+}
+
+/***/ }),
+
 /***/ "./src/js/hideLoader.js":
 /*!******************************!*\
   !*** ./src/js/hideLoader.js ***!
@@ -142,16 +164,19 @@ var _intro = __webpack_require__(/*! ./intro.js */ "./src/js/intro.js");
 
 var _mainMenu = __webpack_require__(/*! ./mainMenu.js */ "./src/js/mainMenu.js");
 
+var _hideInfo = __webpack_require__(/*! ./hideInfo.js */ "./src/js/hideInfo.js");
+
 window.addEventListener('DOMContentLoaded', function () {
   // DOM elements
   var loader = document.querySelector('.loader');
-  var sliderImage = document.querySelector('.slider__image'); // functions
-  //   movement();
+  var infoButton = document.querySelector('.main-menu__info-btn');
+  var close = document.querySelector('.button'); // functions
   // event listeners
 
   window.addEventListener('load', _hideLoader.hideLoader);
   loader.addEventListener('transitionend', _intro.runSlider);
-  sliderImage.addEventListener('transitionend', _mainMenu.displayMenu);
+  infoButton.addEventListener('click', _mainMenu.displayMenu);
+  close.addEventListener('click', _hideInfo.hideInfo);
 });
 
 /***/ }),
@@ -177,6 +202,7 @@ function runSlider() {
   var image = document.querySelector('.slider__image');
   var caption = document.querySelector('.slider__caption');
   var courtain = document.querySelector('.slider__courtain');
+  var menu = document.querySelector('.main-menu');
   var imagesCollection = ['/dist/images/roger-taylor.jpg', '/dist/images/brian-may.jpg', '/dist/images/john-deacon.jpg', '/dist/images/freddie-mercury.jpg', '/dist/images/queen-logo-white.jpg'];
   var textCollection = ['Roger Taylor', 'Brian May', 'John Deacon', 'Freddie Mercury']; // random number between 1 and 5
 
@@ -230,6 +256,7 @@ function runSlider() {
       if (num.i == 4) {
         slider.addEventListener('transitionend', function () {
           slider.style.display = 'none';
+          menu.style.display = 'flex';
         });
       }
     }, 4000);
@@ -256,7 +283,12 @@ Object.defineProperty(exports, "__esModule", {
 exports.displayMenu = displayMenu;
 
 function displayMenu() {
-  var slider = document.querySelector('.slider');
+  var info = document.querySelector('.main-menu__info-cnt');
+  info.style.display = 'block';
+  info.style.animation = 'expand 2s ease';
+  info.addEventListener('animationend', function () {
+    info.style.transform = 'translate(-50%, -50%) scale(1)';
+  });
 }
 
 /***/ })

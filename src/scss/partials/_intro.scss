@@ -20,7 +20,7 @@
 .slider__caption{
     position: absolute;
     @include center;
-    background-color: rgba(0, 0, 0, 0.199);
+    background-color: $transparent-bg;
     color: white;
     font-size: 4em;
     padding: .5em;

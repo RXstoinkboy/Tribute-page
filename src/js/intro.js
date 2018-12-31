@@ -4,6 +4,7 @@ export function runSlider() {
   const image = document.querySelector('.slider__image');
   const caption = document.querySelector('.slider__caption');
   const courtain = document.querySelector('.slider__courtain');
+  const menu = document.querySelector('.main-menu');
 
   const imagesCollection = [
     '/dist/images/roger-taylor.jpg',
@@ -73,6 +74,7 @@ export function runSlider() {
       if (num.i == 4) {
         slider.addEventListener('transitionend', () => {
           slider.style.display = 'none';
+          menu.style.display = 'flex';
         });
       }
     }, 4000);
