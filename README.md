@@ -1,8 +1,6 @@
-# Tribute-apge example
+# Tribute-page example
 This is sample tribute page build for FCC RWD certification.
 It could probably be done easier with less JS and more mediaqueries, but I used JS to get more practice.
-
-// in progress
 
 [watch preview](https://rxstoinkboy.github.io/Tribute-page/)
 
@@ -16,7 +14,7 @@ In order to run this repository and modify it you need [**NodeJS**][1] and **npm
 
 1. Clone the repo to your local environment:
 ```
-git clone https://github.com/RXstoinkboy/rxstoinkboy.git
+git clone https://github.com/RXstoinkboy/Tribute-page.git
 ```
 
 2. Install all dependencies used for building this project:

@@ -34,7 +34,7 @@ export function runSlider() {
   // initial setup
   image.src = `.${imagesCollection[num.i]}`;
 
-  // random image and text flow
+  // random image flow
   image.style.transform = `translate(${-50 + random(2, -2)}%, ${-50 + random(2, -2)}%)`;
   setTimeout(() => {
     courtain.style.backgroundColor = 'white';
@@ -50,7 +50,7 @@ export function runSlider() {
     image.src = `.${imagesCollection[num.i]}`;
 
     // random image flow
-    image.style.transform = `translate(${-50 + random(2, -2)}%, ${-50 + random(2, -2)}%)`;
+    image.style.transform = `translate(${-50 + random(1, -1)}%, ${-50 + random(1, -1)}%)`;
     // change text
     caption.innerText = textCollection[num.i];
 
