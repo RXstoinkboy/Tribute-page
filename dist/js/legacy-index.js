@@ -103,7 +103,10 @@ exports.hideInfo = hideInfo;
 
 function hideInfo() {
   var info = document.querySelector('.main-menu__info-cnt');
-  info.style.display = 'none';
+
+  if (info.style.display !== 'none') {
+    info.style.display = 'none';
+  }
 }
 
 /***/ }),
@@ -287,7 +290,7 @@ exports.displayMenu = displayMenu;
 
 function displayMenu() {
   var info = document.querySelector('.main-menu__info-cnt');
-  info.style.display = 'block';
+  info.style.display = 'flex';
   info.style.animation = 'expand 2s ease';
   info.addEventListener('animationend', function () {
     info.style.transform = 'translate(-50%, -50%) scale(1)';

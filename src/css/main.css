@@ -204,7 +204,7 @@ html {
   overflow: auto;
   padding: 100px 20px;
   font-size: 1.5em;
-  display: flex;
+  display: none;
   flex-flow: column nowrap;
   transform: translate(-50%, -50%) scale(0); }
   .main-menu__info-cnt .button {
