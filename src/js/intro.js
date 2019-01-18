@@ -33,9 +33,10 @@ export function runSlider() {
 
   // // initial setup
   image.src = `.${imagesCollection[num.i]}`;
+  image.style.height = '110vh';
 
   // random image flow / only setting interval helpped me to make a motion flow
-  setTimeout(() => { image.style.transform = `translate(${-50 + random(2, -2)}%, ${-50 + random(2, -2)}%)`; }, 500);
+  setTimeout(() => { image.style.transform = `translate(${-50 + random(1, -1)}%, ${-50 + random(1, -1)}%)`; }, 500);
 
   // courtain after 4seconds
   setTimeout(() => {
@@ -51,6 +52,11 @@ export function runSlider() {
     }
 
     image.src = `.${imagesCollection[num.i]}`;
+
+    if (image.width <= window.innerWidth) {
+      image.style.width = '110vw';
+      image.style.height = 'auto';
+    }
 
     // random image flow
     image.style.transform = `translate(${-50 + random(1, -1)}%, ${-50 + random(1, -1)}%)`;

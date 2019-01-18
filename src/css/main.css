@@ -113,9 +113,8 @@ html {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  height: 110vh;
   overflow: hidden;
-  transition: all 5s ease-in; }
+  transition: transform 5s ease-in-out; }
 
 .slider__caption {
   position: absolute;

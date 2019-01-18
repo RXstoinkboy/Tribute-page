@@ -219,10 +219,11 @@ function runSlider() {
   var num = {};
   num.i = 0; // // initial setup
 
-  image.src = "." + imagesCollection[num.i]; // random image flow / only setting interval helpped me to make a motion flow
+  image.src = "." + imagesCollection[num.i];
+  image.style.height = '110vh'; // random image flow / only setting interval helpped me to make a motion flow
 
   setTimeout(function () {
-    image.style.transform = "translate(" + (-50 + random(2, -2)) + "%, " + (-50 + random(2, -2)) + "%)";
+    image.style.transform = "translate(" + (-50 + random(1, -1)) + "%, " + (-50 + random(1, -1)) + "%)";
   }, 500); // courtain after 4seconds
 
   setTimeout(function () {
@@ -236,7 +237,13 @@ function runSlider() {
       num.i++;
     }
 
-    image.src = "." + imagesCollection[num.i]; // random image flow
+    image.src = "." + imagesCollection[num.i];
+
+    if (image.width <= window.innerWidth) {
+      image.style.width = '110vw';
+      image.style.height = 'auto';
+    } // random image flow
+
 
     image.style.transform = "translate(" + (-50 + random(1, -1)) + "%, " + (-50 + random(1, -1)) + "%)"; // change text
 
