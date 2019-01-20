@@ -165,7 +165,8 @@ html {
   flex-flow: column wrap;
   min-width: 100px;
   min-height: 100px;
-  padding: 20px; }
+  padding: 20px;
+  z-index: 20; }
 
 .main-menu__title {
   font-weight: 700; }
@@ -245,3 +246,12 @@ html {
 @media all and (orientation: landscape) and (max-height: 450px) {
   .main-menu__info-cnt {
     max-height: 90%; } }
+
+.main-menu__outsideClick {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  position: fixed;
+  z-index: 1;
+  cursor: pointer; }

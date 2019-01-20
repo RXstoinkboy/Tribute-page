@@ -103,9 +103,16 @@ exports.hideInfo = hideInfo;
 
 function hideInfo() {
   var info = document.querySelector('.main-menu__info-cnt');
+  var outside = document.querySelector('.main-menu__outsideClick');
 
   if (info.style.display !== 'none') {
     info.style.display = 'none';
+  }
+
+  if (info.style.display !== 'none') {
+    outside.style.display = 'block';
+  } else {
+    outside.style.display = 'none';
   }
 }
 
@@ -174,12 +181,14 @@ var _hideInfo = __webpack_require__(/*! ./hideInfo.js */ "./src/js/hideInfo.js")
   // DOM elements
   var loader = document.querySelector('.loader');
   var infoButton = document.querySelector('.main-menu__info-btn');
-  var close = document.querySelector('.button'); // event listeners
+  var close = document.querySelector('.button');
+  var outside = document.querySelector('.main-menu__outsideClick'); // event listeners
 
   window.addEventListener('load', _hideLoader.hideLoader);
   loader.addEventListener('transitionend', _intro.runSlider);
   infoButton.addEventListener('click', _mainMenu.displayMenu);
   close.addEventListener('click', _hideInfo.hideInfo);
+  outside.addEventListener('click', _hideInfo.hideInfo);
 })(); // });
 
 /***/ }),
@@ -297,7 +306,9 @@ exports.displayMenu = displayMenu;
 
 function displayMenu() {
   var info = document.querySelector('.main-menu__info-cnt');
+  var outside = document.querySelector('.main-menu__outsideClick');
   info.style.display = 'flex';
+  outside.style.display = 'block';
   info.style.animation = 'expand 2s ease';
   info.addEventListener('animationend', function () {
     info.style.transform = 'translate(-50%, -50%) scale(1)';
